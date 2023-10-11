@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="libro.php">
                     <span data-feather="users"></span>
                     Libros
                 </a>
