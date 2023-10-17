@@ -30,7 +30,7 @@
                     <h1 class="h2">Panel de control</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
-                            <a href="crearcategoria.php" type="button" class="btn btn-sm btn-outline-primary">Agregar libro</a>
+                            <a href="crearlibro.php" type="button" class="btn btn-sm btn-outline-primary">Agregar libro</a>
                         </div>
                     </div>
                 </div>
@@ -63,18 +63,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>';
-
+                                    // id INT AUTO_INCREMENT PRIMARY KEY,
+                                    // titulo VARCHAR(100) NOT NULL,
+                                    // autor VARCHAR(255),
+                                    // isbn INT NOT NULL,
+                                    // anio_publicacion INT,
+                                    // ejemplares_disponibles INT NOT NULL,
+                                    // ejemplares_totales INT NOT NULL,
+                                    // id_categoria INT NOT NULL,
+                                    // id_editorial INT NOT NULL,
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 echo "<tr>
                                         <td>{$row['id']}</td>
                                         <td>{$row['titulo']}</td>
                                         <td>{$row['autor']}</td>
                                         <td>{$row['isbn']}</td>
-                                        <td>{$row['año']}</td>
-                                        <td>{$row['copias']}</td>
-                                        <td>{$row['totales']}</td>
-                                        <td>{$row['editorial']}</td>
-                                        <td>{$row['categoria']}</td>
+                                        <td>{$row['anio_publicacion']}</td>
+                                        <td>{$row['ejemplares_disponibles']}</td>
+                                        <td>{$row['ejemplares_totales']}</td>
+                                        <td>{$row['id_editorial']}</td>
+                                        <td>{$row['id_categoria']}</td>
                                         <td>
                                             <a href='editarlibro.php?id={$row['id']}' class='btn btn-primary'>Editar</a>
                                             <button onclick='eliminarLibro({$row['id']})' class='btn btn-danger'>Eliminar</button>
@@ -86,7 +94,7 @@
                             </table>';
                         } catch (PDOException $e) {
                             // En caso de error, muestra un mensaje de error
-                            echo "Error en la consulta: " . $e->getMessage();
+                            echo "ssssError en la consulta: " . $e->getMessage();
                         }
                         ?>
 
