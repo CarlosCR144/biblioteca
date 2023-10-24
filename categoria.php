@@ -108,7 +108,7 @@
                      // Si el usuario confirma, envía el formulario de eliminación
                     const form = document.createElement('form');
                     form.method = 'post';
-                    form.action = 'categoria.php';
+                    form.action = 'eliminarcategoria.php';
                     const input = document.createElement('input');
                     input.type = 'hidden';
                     input.name = 'idCategoria';
